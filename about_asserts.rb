@@ -7,19 +7,21 @@ class AboutAsserts < Neo::Koan
 
   # We shall contemplate truth by testing reality, via asserts.
   def test_assert_truth
-    assert false                # This should be true
+    # a general assert with throw if the given expression evaluates to false
+    assert true
   end
 
   # Enlightenment may be more easily achieved with appropriate
   # messages.
   def test_assert_with_message
-    assert false, "This should be true -- Please fix this"
+    # asserts can be given a message to print when they trigger
+    assert true, "This should be true -- Please fix this"
   end
 
   # To understand reality, we must compare our expectations against
   # reality.
   def test_assert_equality
-    expected_value = __
+    expected_value = 2
     actual_value = 1 + 1
 
     assert expected_value == actual_value
@@ -27,7 +29,8 @@ class AboutAsserts < Neo::Koan
 
   # Some ways of asserting equality are better than others.
   def test_a_better_way_of_asserting_equality
-    expected_value = __
+    # this is a clearer way of asserting whether something is equal to something else
+    expected_value = 2
     actual_value = 1 + 1
 
     assert_equal expected_value, actual_value
@@ -35,6 +38,6 @@ class AboutAsserts < Neo::Koan
 
   # Sometimes we will ask you to fill in the values
   def test_fill_in_values
-    assert_equal __, 1 + 1
+    assert_equal 2, 1 + 1
   end
 end
