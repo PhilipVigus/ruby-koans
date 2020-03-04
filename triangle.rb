@@ -14,6 +14,14 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a < 1 || b < 1 || c < 1
+    raise TriangleError, "Can't have sides of length less than 1"
+  end
+
+  if (a + b <= c) || (a + c <= b) ||(b + c <= a)
+    raise TriangleError, "Can't have triangle where one side is longer than the sum of the other two"
+  end
+  
   if a == b && a == c  
     return :equilateral
   elsif a != b && a != c && b != c
